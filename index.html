@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" charset="utf-8" src="js/erhand.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/twitpic.js"></script>
+		<script type="text/javascript" src="tinybox.js"></script>
+
+
+		<script type="text/javascript">
+
+		</script>
+		<script type="text/javascript" id="idscript"></script>
+	</head>
+	<body>
+		<div class="userheader">
+			<div id="titletext" style="position:absolute;left:85px;"><span style="font-size:18px;">knowPic </span><span style="font-size:15px;">for </span><img id="titleimg" src="icon/logo.png" height="23px" style="position:relative;top:5px;"/></div>
+
+			<a id="userwebsite" target="_blank"><img id ="userimg" src="" style="position:absolute;top:10px;-webkit-border-radius: 10px;-moz-border-radius: 10px;width:63px;height:63px;"/></a>
+			<span id="username" style="font-size:30px;position:absolute;top:28px;left:80px;width:80%;"></span>
+			<div style="position:absolute;top:0px;right:20px;">
+				<span id="enterst" style="position:absolute;top:9px;right:175px;width:180px;font-size:15px;">Enter user name >></span>
+				<input id="uservalue" type="text" value="mariko_dayo" onKeyPress="return submitStop(event)" style="-webkit-border-radius: 10px;-moz-border-radius: 10px;position:absolute;top:7px;right:35px;font-size:16px;"/>
+				<img src="icon/Twitpic-icon.png" onclick="window.location = 'index.html?id=' + document.getElementById('uservalue').value + '&nn=on';" style="width:30px;height:30px;position:absolute;top:5px;right:0px;"/>
+			</div>
+
+			<div  style="position:absolute;bottom:0px;right:45px;">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://knowpic.com/" data-text="knowPic" data-count="horizontal" data-lang="en">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<a href="http://b.hatena.ne.jp/entry/http://knowpic.com/" class="hatena-bookmark-button" data-hatena-bookmark-title="knowPic" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+				<iframe src="http://www.facebook.com/plugins/like.php?href=http://knowpic.com/&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;locale=en_US" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+
+			</div>
+
+			<div style="position:absolute;bottom:5px;right:20px;">
+				<img id="nowbackground" src="bgcolor/race12.png" width="20px"height="20px" style="-webkit-border-radius:3px;-moz-border-radius:3px;border: 2px solid #888888;" onclick="document.getElementById('bgchange').style.display='inline'"/>
+			</div>
+			<div id="bgchange">
+				<img src="icon/icon_close.png" width="20px" height="20px" style="margin:2px;" onclick="document.getElementById('bgchange').style.display='none'" />
+				<img src="minibg/oldpaper7ss.png" class="samplecolor" onclick="backchangebtini('oldpaper7ss')"/>
+				<img src="minibg/race12.png" class="samplecolor" onclick="backchangebtini('race12')"/>
+				<img src="minibg/race8.png" class="samplecolor" onclick="backchangebtini('race8')"/>
+				<img src="minibg/race5.png" class="samplecolor" onclick="backchangebtini('race5')"/>
+				<img src="minibg/kami2.png" class="samplecolor" onclick="backchangebtini('kami2')"/>
+				<img src="minibg/kami1.png" class="samplecolor" onclick="backchangebtini('kami1')"/>
+				<img src="minibg/raceN1s.png" class="samplecolor" onclick="backchangebtini('raceN1s')"/>
+				<img src="minibg/raceN7s.png" class="samplecolor" onclick="backchangebtini('raceN7s')"/>
+				<img src="minibg/raceN8s.png" class="samplecolor" onclick="backchangebtini('raceN8s')"/>
+				<img src="minibg/raceN12s.png" class="samplecolor" onclick="backchangebtini('raceN12s')"/>
+				<img src="minibg/crazykira09.png" class="samplecolor" onclick="backchangebtini('crazykira09')"/>
+				<img src="minibg/BWtile.png" class="samplecolor" onclick="backchangebtini('BWtile')"/>
+			</div>
+		</div>
+		<div id ="twitpicform" style="margin-top:85px;">
+		</div>
+	</body>
+	<script type="text/javascript">
+		var QS = new Array;
+		if (location.search.length > 1) {
+			var m_Array = location.search.substr(1).split("&"); 
+			for (idx in m_Array) {
+				QS.push(m_Array[idx].split("="));
+			}
+		}else{
+			var username = ["mariko_dayo","isardasorensen","NAKATSUKATAKESH","Burberry"];
+			var Rnd = Math.floor( Math.random() * username.length );
+			document.getElementById('uservalue').value = username[Rnd];
+		}
+
+if (location.search.length > 1) {
+	var m_Array = location.search.substr(1).split("&");
+	for (idx in m_Array) {
+		if(QS[idx][0] == "id"){
+			document.getElementById('uservalue').value = QS[idx][1];
+		}
+		if(QS[idx][0] == "bgcolor"){
+			backchangebt(QS[idx][1]);
+		}
+		if(QS[idx][0] == "nn"){
+			if(QS[idx][1] == "on"){
+				document.getElementById('enterst').outerHTML = "";
+			}
+		}
+		if(QS[idx][0] == "size"){
+			if(QS[idx][1] > 0.3){
+				var nowWidth = window.innerWidth * QS[idx][1];
+				var nowHeight = window.innerHeight * QS[idx][1];
+				alert(nowWidth);
+				resizeTo(nowWidth,nowHeight);
+			}else if(QS[idx][1] == ""){
+			}else{
+				var nowWidth = window.innerWidth * 0.3;
+				var nowHeight = window.innerHeight * 0.3;
+				resizeTo(nowWidth,nowHeight);
+			}
+		}
+		if(QS[idx][0] == "title"){
+			if(QS[idx][1] == "no"){
+				document.getElementById('titletext').outerHTML = "";
+				document.getElementById('titleimg').outerHTML = "";
+			}
+		}
+	}
+}
+twibutton(1);
+function backchangebtini(id){
+	window.location = 'http://knowpic.com?id=' + document.getElementById('uservalue').value + '&nn=on&bgcolor=' + id;
+}
+function backchangebt(id){
+	document.body.style.background='url(bgcolor/'+ id +'.png)';
+	//window.location = 'index.html?id=' + document.getElementById('uservalue').value + '&nn=on&bgcolor=' + id;
+	document.getElementById('nowbackground').src = "minibg/" + id + ".png";
+
+	if(id == "kami1"){
+		document.body.style.backgroundPosition = "0px 60px";
+	}
+	if(id == "kami2"){
+		document.body.style.backgroundPosition = "-18px 0px";
+	}
+	if(id.indexOf('BWtile') != -1){
+		document.body.style.backgroundPosition = "-97px -20px";
+	}
+	if(id.indexOf('race') != -1){
+		document.body.style.backgroundPosition = "0px 95px";
+	}
+	if(id.indexOf('raceN') != -1){
+		document.body.style.backgroundPosition = "-19px 0px";
+	}
+}
+</script>
+		</html>

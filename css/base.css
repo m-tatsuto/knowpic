@@ -1,0 +1,60 @@
+body{
+	background:url(../bgcolor/raceN12s.png);
+	background-position:-19px 0px;
+	font-family:serif,"ヒラギノ角ゴ Pro W3";
+}
+.twitpic{
+	-webkit-border-radius: 20px;  
+	-moz-border-radius: 20px;
+	margin: 30px;
+	width:150px;
+	-webkit-transition: All 0.4s ease;
+	-moz-transition: All 0.4s ease;
+	-o-transition: All 0.4s ease;
+	-ms-transition: All 0.4s ease;
+	transition: All 0.4s ease;
+}
+.twitpic:hover{
+	width:210px;
+	margin:0px;
+	-webkit-border-radius: 0px;  
+	-moz-border-radius: 0px;
+	-webkit-transition: All 0.4s ease;
+	-moz-transition: All 0.4s ease;
+	-o-transition: All 0.4s ease;
+	-ms-transition: All 0.4s ease;
+	transition: All 0.4s ease;
+}
+.userheader{
+	width:95%;
+	height:80px;
+	margin-left:2%;
+	position:fixed;top:0px;
+	left:0px;
+	background:#ffffff;
+	-webkit-border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius: 20px;
+	padding-left:10px;
+	padding-right:0px;
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border: 3px double #888888;
+	border-top-style:hidden;
+}
+.samplecolor{
+	width: 20px;
+	height: 20px;
+	margin: 2px;
+	border: 1px dotted #888888;
+}
+#bgchange{
+	display:none;
+	width:16%;
+	position:absolute;
+	top:50px;
+	right:20px;
+	border: 1px solid #888888;
+	background:#ffffff;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
