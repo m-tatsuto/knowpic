@@ -1,0 +1,86 @@
+#Options +FollowSymLinks
+
+RewriteEngine On
+
+
+
+# DoCoMo
+
+RewriteEngine On
+
+RewriteCond %{HTTP_USER_AGENT} DoCoMo
+
+RewriteRule ^$ /m/ [R]
+
+
+
+# Softbank
+
+RewriteCond %{HTTP_USER_AGENT} Vodafone
+
+RewriteRule ^$ /m/ [R]
+
+RewriteCond %{HTTP_USER_AGENT} SoftBank
+
+RewriteRule ^$ /m/ [R]
+
+
+
+# AU KDDI
+
+RewriteCond %{HTTP_USER_AGENT} KDDI
+
+RewriteRule ^$ /m/ [R]
+
+RewriteCond %{HTTP_USER_AGENT} UP.Browser
+
+RewriteRule ^$ /m/ [R]
+
+
+
+# iPod  
+
+RewriteCond %{HTTP_USER_AGENT} iPod  
+
+RewriteRule ^$ /m/ [R]
+
+
+
+# iPhone  
+
+RewriteCond %{HTTP_USER_AGENT} iPhone  
+
+RewriteRule ^$ /m/ [R]
+
+
+
+# iPad  
+
+RewriteCond %{HTTP_USER_AGENT} iPad  
+
+RewriteRule ^$ /m/ [R]
+
+
+
+# Android  
+
+RewriteCond %{HTTP_USER_AGENT} Android  
+
+RewriteRule ^$ /m/ [R]
+ 
+# iPod
+RewriteCond %{HTTP_USER_AGENT} iPod
+RewriteRule ^$ /m/ [R]
+ 
+# iPhone
+RewriteCond %{HTTP_USER_AGENT} iPhone
+RewriteRule ^$ /m/ [R]
+ 
+# iPad
+RewriteCond %{HTTP_USER_AGENT} iPad
+RewriteRule ^$ /m/ [R]
+
+# Android
+RewriteCond %{HTTP_USER_AGENT} Android
+RewriteRule ^$ /m/ [R]
+
